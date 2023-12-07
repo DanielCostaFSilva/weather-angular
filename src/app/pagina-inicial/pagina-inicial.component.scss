@@ -1,0 +1,32 @@
+.page-home{
+    // color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3{
+        margin-top: 200px;
+    }
+    img{
+        width: 120px;
+        height: 120px;
+        margin-top: 50px;
+    }
+}
+
+.cities{
+    margin-top: 20px;
+    display :grid;
+    grid-template-columns: 100px 130px 130px;
+    margin-left: 30px;
+    font-size: 25px;
+
+    a{
+        cursor: pointer;
+    }
+    a:hover{
+        font-size: 27px;
+    }
+
+}
+

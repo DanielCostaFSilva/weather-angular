@@ -1,0 +1,49 @@
+
+.deteil-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    h1{
+        font-size: 35px;
+    }
+    h3{
+        font-size: 25px;
+    }
+    p{
+        margin-top: 15px;
+        font-size: 60px;
+    }
+    img{
+        width: 250px;
+        height: 250px;
+    }
+    // color: white;
+}
+.times-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    // color: white;
+
+}
+
+.day-period{
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-info{
+    margin-left: 15px;
+}
+.footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 30px;
+}
