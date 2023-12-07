@@ -7,18 +7,19 @@
   font-family: 'Segoe UI';
   margin-top: 200px;
 
-  h3{
-    font-weight:lighter;
-    font-size: 3vw;
+  h3 {
+    font-weight: lighter;
+    font-size: 40px; /* ou qualquer outro valor fixo para desktop */
   }
 
-  p{
-    font-size: 2vw;
+  p {
+    font-size: 30px; /* ou qualquer outro valor fixo para desktop */
   }
+
   img {
-    width: 20%;
-    max-width: 120px;
-    margin-top: 2%;
+    width: 120px; /* ou qualquer outro valor fixo para desktop */
+    max-width: 20%;
+    margin-top: 10px; /* ou qualquer outro valor fixo para desktop */
   }
 
   .cities {
@@ -26,35 +27,34 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
 
     a {
       cursor: pointer;
-      font-size: 2vw;
+      font-size: 16px; /* ou qualquer outro valor fixo para desktop */
       margin-top: 10px;
       margin-bottom: 10px;
       width: calc(33.33% - 10px);
       min-width: 100px;
       transition: font-size 0.3s ease;
       margin-left: 70px;
-      font-size: 1.5vw;
-      font-weight:lighter;
+      font-size: 30px; /* ou qualquer outro valor fixo para desktop */
+      font-weight: lighter;
     }
 
     a:hover {
-      font-size: 2.2vw;
+      font-size: 14px; /* ou qualquer outro valor fixo para desktop */
     }
   }
 
   .cities:nth-child(3n) {
-    margin-right: 0; // Remove a margem à direita para a última cidade em cada linha
+    margin-right: 0;
   }
 
-  .cities:nth-child(n+4) {
-    margin-top: 10px; // Adiciona margem acima das cidades na segunda linha
+  .cities:nth-child(n + 4) {
+    margin-top: 10px;
   }
 
-  .cities:nth-child(n+7) {
-    margin-top: 0; // Remove a margem acima das cidades na terceira linha
+  .cities:nth-child(n + 7) {
+    margin-top: 0;
   }
 }
