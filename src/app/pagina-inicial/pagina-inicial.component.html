@@ -1,13 +1,13 @@
 <div class="page-home">
-    <h3>PPREVISAO DO TEMPO</h3>
-    <p>selecione uma cidade</p>
+  <h3>PREVISAO DO TEMPO</h3>
+  <p>selecione uma cidade</p>
 
-    <img src="assets/terra.png" alt="Imagem da Cidade">
-    <div *ngFor="let linha of cidades">
-      <div class="cities">
-        <div *ngFor="let cidade of linha">
-          <a (click)="buscarDetalhes(cidade)">{{ cidade }}</a>
-        </div>
+  <img src="assets/terra.png" alt="Imagem da Cidade" />
+  <div *ngFor="let linha of cidades">
+    <div class="cities">
+      <div *ngFor="let cidade of linha">
+        <a (click)="buscarDetalhes(cidade)">{{ cidade }}</a>
       </div>
     </div>
   </div>
+</div>

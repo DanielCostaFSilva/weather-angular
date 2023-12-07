@@ -17,6 +17,7 @@ export class DetalhesCidadeComponent implements OnInit {
   timeSunset: string = '';
   timeSunrise: string = '';
   horaFormatada: string = '';
+  temp: number = 0;
 
   selectedItemIndices: number[] = [0, 2, 4, 6];
 
@@ -36,6 +37,8 @@ export class DetalhesCidadeComponent implements OnInit {
 
       this.timeSunset = this.formatarHoraMinuto(data.sys.sunset);
       this.timeSunrise = this.formatarHoraMinuto(data.sys.sunrise);
+      this.temp = Math.floor(data.main.temp);
+      // console.log(' TIPO =>' + typeof data.main.temp);
     });
 
     // Obtenha previsão do tempo

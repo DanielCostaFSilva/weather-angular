@@ -1,92 +1,109 @@
-<div class="deteil-container">
-  <h1>{{ cidadeSelecionada }}</h1>
-  <h3>{{ weatherData.weather[0].description }}</h3>
-  <p>{{ weatherData.main.temp }} °C</p>
-  <img
-    *ngIf="weatherData && weatherData.weather && weatherData.weather[0].icon"
-    [src]="
-      'https://openweathermap.org/img/wn/' +
-      weatherData.weather[0].icon +
-      '.png'
-    "
-    alt="Ícone do Clima"
-  />
-</div>
 
-<div class="times-container">
-  <div class="day-period">
-    <p>alvorecer</p>
-    <img
-      *ngIf="forecastDataList"
-      [src]="
-        'https://openweathermap.org/img/wn/' +
-        forecastDataList[0].weather[0].icon +
-        '.png'
-      "
-      alt=""
-      srcset=""
-    />
-    <span *ngIf="forecastDataList">{{ forecastDataList[0].main.temp }}</span>
+<div class="container">
+  <div class="back">
+    <a routerLink="" routerLinkActive="active"> < </a>
   </div>
-  <div class="day-period">
-    <p>manhã</p>
-    <img
-      *ngIf="forecastDataList"
-      [src]="
-        'https://openweathermap.org/img/wn/' +
-        forecastDataList[2].weather[0].icon +
-        '.png'
-      "
-      alt=""
-      srcset=""
-    />
-    <span *ngIf="forecastDataList">{{ forecastDataList[2].main.temp }}</span>
-  </div>
-  <div class="day-period">
-    <p>tarde</p>
-    <img
-      *ngIf="forecastDataList"
-      [src]="
-        'https://openweathermap.org/img/wn/' +
-        forecastDataList[4].weather[0].icon +
-        '.png'
-      "
-      alt=""
-      srcset=""
-    />
-    <span *ngIf="forecastDataList">{{ forecastDataList[4].main.temp }}</span>
-  </div>
-  <div class="day-period">
-    <p>noite</p>
-    <img
-      *ngIf="forecastDataList"
-      [src]="
-        'https://openweathermap.org/img/wn/' +
-        forecastDataList[6].weather[0].icon +
-        '.png'
-      "
-      alt=""
-      srcset=""
-    />
-    <span *ngIf="forecastDataList">{{ forecastDataList[6].main.temp }}</span>
-  </div>
-</div>
+  <div class="deteil-container">
+    <h1>{{ cidadeSelecionada }}</h1>
+    <h3>{{ weatherData.weather[0].description }}</h3>
 
-<div class="footer-container">
-  <div class="footer-info">
-    <p>velocidade do vento</p>
-    <p>{{ weatherData.wind.speed }} m/s</p>
+    <div class="temp-container">
+      <div class="temp">
+        <p>{{ temp }}</p>
+      </div>
+      <div class="temp-max-min">
+        <p>°C</p>
+        <p>↑25°</p>
+        <p>↓30°</p>
+      </div>   
+    </div>
+
+    <img
+      *ngIf="weatherData && weatherData.weather && weatherData.weather[0].icon"
+      [src]="
+        'https://openweathermap.org/img/wn/' +
+        weatherData.weather[0].icon +
+        '.png'
+      "
+      alt="Ícone do Clima"
+    />
   </div>
-  <div class="footer-info">
-    <p>nascer do sol</p>
-    <p>{{ timeSunset }}</p>
+
+  <div class="times-container">
+    <div class="day-period">
+      <p>alvorecer</p>
+      <img
+        *ngIf="forecastDataList"
+        [src]="
+          'https://openweathermap.org/img/wn/' +
+          forecastDataList[0].weather[0].icon +
+          '.png'
+        "
+        alt=""
+        srcset=""
+      />
+      <span *ngIf="forecastDataList">{{ forecastDataList[0].main.temp }}</span>
+    </div>
+    <div class="day-period">
+      <p>manhã</p>
+      <img
+        *ngIf="forecastDataList"
+        [src]="
+          'https://openweathermap.org/img/wn/' +
+          forecastDataList[2].weather[0].icon +
+          '.png'
+        "
+        alt=""
+        srcset=""
+      />
+      <span *ngIf="forecastDataList">{{ forecastDataList[2].main.temp }}</span>
+    </div>
+    <div class="day-period">
+      <p>tarde</p>
+      <img
+        *ngIf="forecastDataList"
+        [src]="
+          'https://openweathermap.org/img/wn/' +
+          forecastDataList[4].weather[0].icon +
+          '.png'
+        "
+        alt=""
+        srcset=""
+      />
+      <span *ngIf="forecastDataList">{{ forecastDataList[4].main.temp }}</span>
+    </div>
+    <div class="day-period">
+      <p>noite</p>
+      <img
+        *ngIf="forecastDataList"
+        [src]="
+          'https://openweathermap.org/img/wn/' +
+          forecastDataList[6].weather[0].icon +
+          '.png'
+        "
+        alt=""
+        srcset=""
+      />
+      <span *ngIf="forecastDataList">{{ forecastDataList[6].main.temp }}</span>
+    </div>
   </div>
-  <div class="footer-info">
-    <p>pôr do sol</p>
-    <p>{{ timeSunrise }}</p>
-  </div>
-  <div class="footer-info">
-    <p>umidade</p>
-    <p>{{ weatherData.main.humidity }}%</p>
+
+  <div class="footer-container">
+    <div class="footer-info">
+      <p>velocidade do vento</p>
+      <p>{{ weatherData.wind.speed }} m/s</p>
+    </div>
+    <div class="footer-info">
+      <p>nascer do sol</p>
+      <p>{{ timeSunset }}</p>
+    </div>
+    <div class="footer-info">
+      <p>pôr do sol</p>
+      <p>{{ timeSunrise }}</p>
+    </div>
+    <div class="footer-info">
+      <p>umidade</p>
+      <p>{{ weatherData.main.humidity }}%</p>
+    </div>
   </div>
 </div>
