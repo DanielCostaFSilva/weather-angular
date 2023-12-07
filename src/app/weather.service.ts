@@ -15,12 +15,12 @@ export class WeatherService {
   ) {}
 
   getWeather(city: string): Observable<any> {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&lang=pt_br&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric`;
     return this.http.get(apiUrl);
   }
 
   getWeatherForecast(city: string): Observable<any> {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${this.apiKey}&lang=pt_br&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${this.apiKey}&units=metric`;
     return this.http.get(apiUrl);
   }
 }

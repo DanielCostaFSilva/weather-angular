@@ -13,11 +13,11 @@ export class DetalhesCidadeComponent implements OnInit {
   weatherData: any;
   forecastData: any;
   forecastDataList: any;
-
   timeSunset: string = '';
   timeSunrise: string = '';
   horaFormatada: string = '';
   temp: number = 0;
+
 
   selectedItemIndices: number[] = [0, 2, 4, 6];
 
@@ -67,4 +67,25 @@ export class DetalhesCidadeComponent implements OnInit {
     this.horaFormatada = `${horasFormatadas}:${minutosFormatados} ${periodo}`;
     return this.horaFormatada;
   }
+
+  convertToNumber(value: any): number {
+    return Math.floor(value);
+  }
+
+  convertToTemperature(value: any): string {
+    // Use o operador unário + para converter para número
+    const convertedValue = +value;
+
+    // Verifique se a conversão foi bem-sucedida e o resultado é um número
+    if (!isNaN(convertedValue)) {
+      // Use toFixed para arredondar para zero casas decimais
+      const roundedValue = convertedValue.toFixed(0);
+      return `${roundedValue}°C`;
+    }
+
+    // Se a conversão falhar, retorne um valor padrão ou uma string indicando o erro
+    return 'Erro de conversão';
+  }
+
 }
+

@@ -7,6 +7,14 @@
   font-family: 'Segoe UI';
   margin-top: 200px;
 
+  h3{
+    font-weight:lighter;
+    font-size: 3vw;
+  }
+
+  p{
+    font-size: 2vw;
+  }
   img {
     width: 20%;
     max-width: 120px;
@@ -14,13 +22,13 @@
   }
 
   .cities {
-    margin-top: 3%;
+    margin-top: 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
 
     a {
-
       cursor: pointer;
       font-size: 2vw;
       margin-top: 10px;
@@ -28,7 +36,9 @@
       width: calc(33.33% - 10px);
       min-width: 100px;
       transition: font-size 0.3s ease;
-      margin-left: 15px;
+      margin-left: 70px;
+      font-size: 1.5vw;
+      font-weight:lighter;
     }
 
     a:hover {

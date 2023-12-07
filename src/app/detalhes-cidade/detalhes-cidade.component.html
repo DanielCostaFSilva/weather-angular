@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="back">
     <a routerLink="" routerLinkActive="active"> < </a>
@@ -15,7 +14,7 @@
         <span>°C</span>
         <p>↑25°</p>
         <p>↓30°</p>
-      </div>   
+      </div>
     </div>
 
     <img
@@ -31,7 +30,7 @@
 
   <div class="times-container">
     <div class="day-period">
-      <p>alvorecer</p>
+      <p>dawn</p>
       <img
         *ngIf="forecastDataList"
         [src]="
@@ -42,10 +41,12 @@
         alt=""
         srcset=""
       />
-      <span *ngIf="forecastDataList">{{ forecastDataList[0].main.temp }}</span>
+      <span *ngIf="forecastDataList">{{
+        convertToTemperature(forecastDataList[0].main.temp)
+      }}</span>
     </div>
     <div class="day-period">
-      <p>manhã</p>
+      <p>morning</p>
       <img
         *ngIf="forecastDataList"
         [src]="
@@ -56,10 +57,12 @@
         alt=""
         srcset=""
       />
-      <span *ngIf="forecastDataList">{{ forecastDataList[2].main.temp }}</span>
+      <span *ngIf="forecastDataList">{{
+        convertToTemperature(forecastDataList[2].main.temp) 
+      }}</span>
     </div>
     <div class="day-period">
-      <p>tarde</p>
+      <p>afternoon</p>
       <img
         *ngIf="forecastDataList"
         [src]="
@@ -70,10 +73,12 @@
         alt=""
         srcset=""
       />
-      <span *ngIf="forecastDataList">{{ forecastDataList[4].main.temp }}</span>
+      <span *ngIf="forecastDataList">{{
+        convertToTemperature(forecastDataList[4].main.temp)
+      }}</span>
     </div>
     <div class="day-period">
-      <p>noite</p>
+      <p>night</p>
       <img
         *ngIf="forecastDataList"
         [src]="
@@ -84,25 +89,27 @@
         alt=""
         srcset=""
       />
-      <span *ngIf="forecastDataList">{{ forecastDataList[6].main.temp }}</span>
+      <span *ngIf="forecastDataList">{{
+        convertToTemperature(forecastDataList[6].main.temp)
+      }}</span>
     </div>
   </div>
 
   <div class="footer-container">
     <div class="footer-info">
-      <p>velocidade do vento</p>
+      <p>wind speed</p>
       <p>{{ weatherData.wind.speed }} m/s</p>
     </div>
     <div class="footer-info">
-      <p>nascer do sol</p>
+      <p>sunrise</p>
       <p>{{ timeSunset }}</p>
     </div>
     <div class="footer-info">
-      <p>pôr do sol</p>
+      <p>sunset</p>
       <p>{{ timeSunrise }}</p>
     </div>
     <div class="footer-info">
-      <p>umidade</p>
+      <p>humidity</p>
       <p>{{ weatherData.main.humidity }}%</p>
     </div>
   </div>
