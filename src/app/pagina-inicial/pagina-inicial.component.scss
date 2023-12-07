@@ -1,62 +1,50 @@
-.page-home{
-    color: white;
+.page-home {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Segoe UI';
+  margin-top: 200px;
+
+  img {
+    width: 20%;
+    max-width: 120px;
+    margin-top: 2%;
+  }
+
+  .cities {
+    margin-top: 3%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-    font-family:'Segoe UI';
-   
-    img{
-        width: 120px;
-        height: 120px;
-        margin-top: 50px;
+    a {
+
+      cursor: pointer;
+      font-size: 2vw;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: calc(33.33% - 10px);
+      min-width: 100px;
+      transition: font-size 0.3s ease;
+      margin-left: 15px;
     }
 
-    @media (max-width: 576px) {
-        // Estilos para dispositivos pequenos (até 576 pixels de largura)
-        height: auto;
-        padding: 10px;
-    
-        h1 {
-          font-size: 18px;
-        }
-      }
-    
-      @media (min-width: 577px) and (max-width: 992px) {
-        // Estilos para dispositivos médios (de 577 a 992 pixels de largura)
-        height: 80vh;
-        padding: 20px;
-    
-        h1 {
-          font-size: 24px;
-        }
-      }
-    
-      @media (min-width: 993px) {
-        // Estilos para dispositivos grandes (mais de 992 pixels de largura)
-        height: 100vh;
-        padding: 30px;
-    
-        h1 {
-          font-size: 32px;
-        }
-      }
+    a:hover {
+      font-size: 2.2vw;
+    }
+  }
+
+  .cities:nth-child(3n) {
+    margin-right: 0; // Remove a margem à direita para a última cidade em cada linha
+  }
+
+  .cities:nth-child(n+4) {
+    margin-top: 10px; // Adiciona margem acima das cidades na segunda linha
+  }
+
+  .cities:nth-child(n+7) {
+    margin-top: 0; // Remove a margem acima das cidades na terceira linha
+  }
 }
-
-.cities{
-    margin-top: 20px;
-    display :grid;
-    grid-template-columns: 100px 130px 130px;
-    margin-left: 30px;
-    font-size: 25px;
-
-    a{
-        cursor: pointer;
-    }
-    a:hover{
-        font-size: 27px;
-    }
-
-}
-
