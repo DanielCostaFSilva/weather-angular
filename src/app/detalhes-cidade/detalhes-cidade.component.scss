@@ -37,12 +37,12 @@
     margin-top: -1.25%;
   }
   .temp {
-    font-size: 3em; // Alterado para 1em
+    font-size: 3em;
     margin-right: 1%;
 
     p {
       margin: 0;
-      font-size: 2em; // Alterado para 2em
+      font-size: 2em;
     }
   }
 
@@ -99,15 +99,15 @@
 
   .day-period {
     margin: 1%;
-    flex: 0 1 20%; // Inicialmente, cada .day-period terá 20% da largura
+    flex: 0 1 20%;
 
     p {
       font-size: 1em;
     }
 
     img {
-      width: 75%; // Ocupará 100% da largura da .day-period
-      height: auto; // Mantém a proporção original
+      width: 75%;
+      height: auto;
     }
 
     span {
@@ -128,7 +128,7 @@
 
   .footer-info {
     margin-left: 1%;
-    flex: 0 1 20%; // Inicialmente, cada .footer-info terá 20% da largura
+    flex: 0 1 20%;
 
     p {
       font-size: 1em;

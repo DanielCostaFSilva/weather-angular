@@ -1,6 +1,6 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Router } from '@angular/router';  // Adicione esta importação
+import { Router } from '@angular/router'; // Adicione esta importação
 import { PaginaInicialComponent } from './pagina-inicial.component';
 import { WeatherService } from '../weather.service';
 import { DataSharingService } from '../data-sharing.service';
@@ -13,9 +13,7 @@ class MockWeatherService {
 }
 
 class MockDataSharingService {
-  setWeatherData(data: any) {
-    // Implemente conforme necessário
-  }
+  setWeatherData(data: any) {}
 }
 
 describe('PaginaInicialComponent', () => {
@@ -30,7 +28,7 @@ describe('PaginaInicialComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [PaginaInicialComponent],
-      imports: [RouterTestingModule], // Certifique-se de importar RouterTestingModule
+      imports: [RouterTestingModule],
       providers: [
         { provide: WeatherService, useValue: mockWeatherService },
         { provide: DataSharingService, useClass: MockDataSharingService },
@@ -49,7 +47,9 @@ describe('PaginaInicialComponent', () => {
   it('should call getWeather and navigate when buscarDetalhes is called', () => {
     const cidade = 'Dallol';
 
-    spyOn(mockWeatherService, 'getWeather').and.returnValue(of(/* dados simulados */));
+    spyOn(mockWeatherService, 'getWeather').and.returnValue(
+      of(/* dados simulados */)
+    );
 
     component.buscarDetalhes(cidade);
 

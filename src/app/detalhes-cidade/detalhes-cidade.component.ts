@@ -18,7 +18,6 @@ export class DetalhesCidadeComponent implements OnInit {
   horaFormatada: string = '';
   temp: number = 0;
 
-
   selectedItemIndices: number[] = [0, 2, 4, 6];
 
   constructor(
@@ -30,25 +29,19 @@ export class DetalhesCidadeComponent implements OnInit {
   ngOnInit(): void {
     this.cidadeSelecionada = this.route.snapshot.params['cidade'];
 
-    // Use o serviço de compartilhamento de dados para obter os dados do clima
     this.dataSharingService.weatherData$.subscribe((data) => {
       this.weatherData = data;
-      console.log('vidade:', this.weatherData);
 
       this.timeSunset = this.formatarHoraMinuto(data.sys.sunset);
       this.timeSunrise = this.formatarHoraMinuto(data.sys.sunrise);
       this.temp = Math.floor(data.main.temp);
-      // console.log(' TIPO =>' + typeof data.main.temp);
     });
 
-    // Obtenha previsão do tempo
     this.weatherService
       .getWeatherForecast(this.cidadeSelecionada)
       .subscribe((forecast) => {
         this.forecastData = forecast;
         this.forecastDataList = forecast.list;
-        console.log('Previsão do Tempo:', this.forecastData);
-        // Agora você pode processar os dados da previsão para alvorecer, manhã, tarde, noite, etc.
       });
   }
 
@@ -73,19 +66,13 @@ export class DetalhesCidadeComponent implements OnInit {
   }
 
   convertToTemperature(value: any): string {
-    // Use o operador unário + para converter para número
     const convertedValue = +value;
 
-    // Verifique se a conversão foi bem-sucedida e o resultado é um número
     if (!isNaN(convertedValue)) {
-      // Use toFixed para arredondar para zero casas decimais
       const roundedValue = convertedValue.toFixed(0);
       return `${roundedValue}°C`;
     }
 
-    // Se a conversão falhar, retorne um valor padrão ou uma string indicando o erro
     return 'Erro de conversão';
   }
-
 }
-

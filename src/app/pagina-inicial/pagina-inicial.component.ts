@@ -14,16 +14,16 @@ export class PaginaInicialComponent {
     ['Recife', 'Vancouver', 'Yakutsk'],
   ];
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private weatherService: WeatherService,
-    private dataSharingService: DataSharingService) {}
+    private dataSharingService: DataSharingService
+  ) {}
 
   buscarDetalhes(cidade: string): void {
-    this.weatherService.getWeather(cidade).subscribe(response => {
-      // Use o serviço de compartilhamento de dados para passar os dados do clima
+    this.weatherService.getWeather(cidade).subscribe((response) => {
       this.dataSharingService.setWeatherData(response);
 
-      // Navegue para a próxima página
       this.router.navigate(['/detalhes', cidade]);
     });
   }

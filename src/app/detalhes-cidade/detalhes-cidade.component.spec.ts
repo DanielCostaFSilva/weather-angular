@@ -17,11 +17,17 @@ describe('DetalhesCidadeComponent', () => {
   };
 
   const dataSharingServiceMock = {
-    weatherData$: of({ /* dados simulados */ }),
+    weatherData$: of({
+      /* dados simulados */
+    }),
   };
 
   const weatherServiceMock = {
-    getWeatherForecast: jasmine.createSpy('getWeatherForecast').and.returnValue(of({ /* dados simulados */ })),
+    getWeatherForecast: jasmine.createSpy('getWeatherForecast').and.returnValue(
+      of({
+        /* dados simulados */
+      })
+    ),
   };
 
   beforeEach(() => {
@@ -48,12 +54,9 @@ describe('DetalhesCidadeComponent', () => {
   });
 
   it('should formatarHoraMinuto correctly', () => {
-    const timestamp = 1609459200; // Timestamp correspondente a uma data específica
+    const timestamp = 1609459200;
     const formattedTime = component.formatarHoraMinuto(timestamp);
 
-    // Aqui você pode verificar se o método está formatando o tempo corretamente
-    expect(formattedTime).toEqual('12:00 AM'); // Substitua pelo valor esperado
+    expect(formattedTime).toEqual('12:00 AM');
   });
-
- 
 });
