@@ -4,7 +4,7 @@
   </div>
   <div class="deteil-container">
     <h1>{{ cidadeSelecionada }}</h1>
-    <h3>{{ weatherData.weather[0].description }}</h3>
+    <h3>{{ weatherData?.weather?.[0]?.description }}</h3>
 
     <div class="temp-container">
       <div class="temp">
@@ -98,7 +98,7 @@
   <div class="footer-container">
     <div class="footer-info">
       <p>wind speed</p>
-      <p>{{ weatherData.wind.speed }} m/s</p>
+      <p>{{ weatherData?.wind?.speed }} m/s</p>
     </div>
     <div class="footer-info">
       <p>sunrise</p>
@@ -110,7 +110,7 @@
     </div>
     <div class="footer-info">
       <p>humidity</p>
-      <p>{{ weatherData.main.humidity }}%</p>
+      <p>{{ weatherData?.main?.humidity }}%</p>
     </div>
   </div>
 </div>
